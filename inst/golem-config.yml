@@ -1,0 +1,17 @@
+default:
+  golem_name: mygolem
+  golem_version: 0.0.0.9000
+  app_prod: no
+  default_programs: !expr c(1:10000)
+  db_host: mydata.us-west-2.rds.amazonaws.com
+  db_name: efs
+dev:
+  golem_wd: !expr here::here()
+  default_programs: !expr c(1:10000)
+  db_host: mydata-new.us-west-2.rds.amazonaws.com
+  db_name: efs
+production:
+  default_programs: !expr c()
+  db_host: mydata-new.us-west-2.rds.amazonaws.com
+  db_name: efs
+  app_prod: yes
